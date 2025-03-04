@@ -28,3 +28,9 @@ var iban: String = "DE 1234 5678 9101 1213"
 var pin: String = "1234"
 var accountSuspended: Bool = false
 var balance: Double = 1530.40
+
+// Aufgabe 2.3 Metadaten
+
+var userId: UUID = UUID()
+var creditRating: Int = 750
+var amountLastWithdraw: Double = -100.00
