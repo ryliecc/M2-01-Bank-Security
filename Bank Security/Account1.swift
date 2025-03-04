@@ -31,16 +31,16 @@ var balance: Double = 1530.40
 
 // Aufgabe 2.3 Metadaten
 
-var userId: UUID = UUID()
+let userId: UUID = UUID()
 var creditRating: Int = 750
 var amountLastWithdraw: Double = -100.00
 
-// Aufgabe 2.6 Währungswechsel
+// Aufgabe 2.5 Währungswechsel
 
 let exchangeRateEur: Double = 1.00
-let exchangeRateUsd: Double = 1.12
-let exchangeRateGbp: Double = 0.85
-let exchangeRateJpy: Double = 133.15
+var exchangeRateUsd: Double = 1.12
+var exchangeRateGbp: Double = 0.85
+var exchangeRateJpy: Double = 133.15
 
 func convertCurrency(_ exchangeRate: Double) -> String {
     let exchangedBalance: Double = balance * exchangeRate
