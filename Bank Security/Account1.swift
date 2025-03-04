@@ -46,3 +46,5 @@ func convertCurrency(_ exchangeRate: Double) -> String {
     let exchangedBalance: Double = balance * exchangeRate
     return exchangedBalance.formatted(.number.precision(.fractionLength(2)))
 }
+
+// Test Änderung für Terminal Nutzung
