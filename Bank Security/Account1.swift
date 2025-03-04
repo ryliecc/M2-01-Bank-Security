@@ -37,10 +37,12 @@ var amountLastWithdraw: Double = -100.00
 
 // Aufgabe 2.6 Währungswechsel
 
+let exchangeRateEur: Double = 1.00
 let exchangeRateUsd: Double = 1.12
 let exchangeRateGbp: Double = 0.85
 let exchangeRateJpy: Double = 133.15
 
-func convertCurrency(eurBalance: Double, exchangeRate: Double) -> Double {
-    return eurBalance * exchangeRate
+func convertCurrency(_ exchangeRate: Double) -> String {
+    let exchangedBalance: Double = balance * exchangeRate
+    return exchangedBalance.formatted(.number.precision(.fractionLength(2)))
 }

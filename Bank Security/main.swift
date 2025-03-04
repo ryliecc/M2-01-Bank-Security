@@ -30,7 +30,7 @@ print("Welt")
 
 // Aufgabe 2.5 Währungswechsel
 
-print("The current balance is \(balance.formatted(.number.precision(.fractionLength(2)))) €.")
-print("The current balance is \(convertCurrency(eurBalance: balance, exchangeRate: exchangeRateUsd).formatted(.number.precision(.fractionLength(2)))) $.")
-print("The current balance is \(convertCurrency(eurBalance: balance, exchangeRate: exchangeRateGbp).formatted(.number.precision(.fractionLength(2)))) £.")
-print("The current balance is \(convertCurrency(eurBalance: balance, exchangeRate: exchangeRateJpy).formatted(.number.precision(.fractionLength(2)))) ¥.")
+print("The current balance is \(convertCurrency(exchangeRateEur)) €.")
+print("The current balance is \(convertCurrency(exchangeRateUsd)) $.")
+print("The current balance is \(convertCurrency(exchangeRateGbp)) £.")
+print("The current balance is \(convertCurrency(exchangeRateJpy)) ¥.")
