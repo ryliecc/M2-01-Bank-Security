@@ -69,3 +69,14 @@ dateFormatter.dateStyle = .long
 dateFormatter.timeStyle = .medium
 formattedDate = dateFormatter.string(from: currentDate)
 print(formattedDate)
+
+// Aufgabe 3.1 Kontoberechnungen durchführen
+
+account.balance += 250.00
+print("The account balance is now \(account.balance) €.")
+account.balance -= 120.00
+print("The account balance is now \(account.balance) €.")
+let halfBalance: Double = account.balance / 2
+print("Half of the account balance is \(halfBalance) €.")
+let restMoney: Int = 55 % 10
+print("If 55€ are being withdrawn from an ATM that only stores 10€ bills \(restMoney)€ will remain on the account.")
