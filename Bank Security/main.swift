@@ -88,4 +88,13 @@ var amountDouble: Double = Double(amountInt)
 var balanceInCents: Int = Int(account.balance * 100)
 var accountNumberString: String = String(account.accountNumber)
 
+// Aufgabe 3.4 Kontogebühren & Zinsen
 
+let accountFee: Double = 5
+account.balance -= accountFee
+print("After paying the account fee the account balance is \(account.balance) €.")
+
+var interestRate: Double = 0.05
+let interest: Double = account.balance * interestRate
+account.balance += interest
+print("After adding interest rates the account balance is \(account.balance) €.")
