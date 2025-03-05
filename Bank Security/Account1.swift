@@ -35,6 +35,10 @@ let userId: UUID = UUID()
 var creditRating: Int = 750
 var amountLastWithdraw: Double = -100.00
 
+// Zusammenfassung als Tupel nach Tag 3
+
+var account: (userName: String, userAge: Int, userIsAdult: Bool, userAdressTown: String, userAdressStreet: String, userAdressHouseNumber: String, userEmail: String, userPhoneNumber: String, bankName: String, bankTown: String, accountNumber: String, iban: String, pin: String, isAccountSuspended: Bool, balance: Double, id: UUID, creditRating: Int, lastWithdrawAmount: Double) = ("Beate Beispiel", 39, true, "Berlin", "Breite Straße", "123", "beate.beispiel@example.com", "+49123456789", "Beispielbank Deutschland", "Berlin", "12345678", "DE 1234 5678 9101 1213", "1234", false, 1530.40, UUID(), 750, -100.00)
+
 // Aufgabe 2.5 Währungswechsel
 
 let exchangeRateEur: Double = 1.00
@@ -43,6 +47,6 @@ var exchangeRateGbp: Double = 0.85
 var exchangeRateJpy: Double = 133.15
 
 func convertCurrency(_ exchangeRate: Double) -> String {
-    let exchangedBalance: Double = balance * exchangeRate
+    let exchangedBalance: Double = account.balance * exchangeRate
     return exchangedBalance.formatted(.number.precision(.fractionLength(2)))
 }
