@@ -98,3 +98,12 @@ var interestRate: Double = 0.05
 let interest: Double = account.balance * interestRate
 account.balance += interest
 print("After adding interest rates the account balance is \(account.balance) €.")
+
+// Aufgabe 3.5 Kreditrahmen
+
+var creditCardLimit: Int = 1000
+print("Please enter your current debit.")
+var currentDebit: Double = Double(readLine()!)!
+var limitUsedPercentage: Double = currentDebit / Double(creditCardLimit) * 100
+
+print("The current debit is \(currentDebit.formatted(.number.precision(.fractionLength(2))))€, which means that the credit card limit of \(creditCardLimit.formatted(.number.precision(.fractionLength(2))))€ is used up by \(limitUsedPercentage.formatted(.number.precision(.fractionLength(2))))%.")
