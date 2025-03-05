@@ -80,3 +80,10 @@ let halfBalance: Double = account.balance / 2
 print("Half of the account balance is \(halfBalance) €.")
 let restMoney: Int = 55 % 10
 print("If 55€ are being withdrawn from an ATM that only stores 10€ bills \(restMoney)€ will remain on the account.")
+
+// Aufgabe 3.2 Daten konvertieren
+
+var amountInt: Int = 500
+var amountDouble: Double = Double(amountInt)
+var balanceInCents: Int = Int(account.balance * 100)
+var accountNumberString: String = String(account.accountNumber)
