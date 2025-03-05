@@ -107,3 +107,11 @@ var currentDebit: Double = Double(readLine()!)!
 var limitUsedPercentage: Double = currentDebit / Double(creditCardLimit) * 100
 
 print("The current debit is \(currentDebit.formatted(.number.precision(.fractionLength(2))))€, which means that the credit card limit of \(creditCardLimit.formatted(.number.precision(.fractionLength(2))))€ is used up by \(limitUsedPercentage.formatted(.number.precision(.fractionLength(2))))%.")
+
+// Aufgabe 3.6 Das 3-Kontenmodell
+
+let longTermSaving: Double = account.balance / 100 * 50
+let mediumTermSpending: Double = account.balance / 100 * 30
+let shortTermSpending: Double = account.balance / 100 * 20
+
+print("After allocating the balance from the main account to three accounts, the user now has a balance of \(longTermSaving.formatted(.number.precision(.fractionLength(2))))€ for long-term saving, \(mediumTermSpending.formatted(.number.precision(.fractionLength(2))))€ for medium-term spending and \(shortTermSpending.formatted(.number.precision(.fractionLength(2))))€ for short-term spending.")
