@@ -186,3 +186,29 @@ The first 10 Characters of the message are:
 The last 10 characters are:
 \(lastTenChars)
 """)
+
+// Aufgabe 4.6 Übersetzung in Morsecode
+
+func textToMorseCode (_ text: String) -> String {
+    let morseAlphabet: [Character: String] = [
+        "A": " .- ", "B": " -... ", "C": " -.-. ", "D": " -.. ", "E": " . ", "F": " ..-. ",
+        "G": " --. ", "H": " .... ", "I": " .. ", "J": " .--- ", "K": " -.- ", "L": " .-.. ",
+        "M": " -- ", "N": " -. ", "O": " --- ", "P": " .--. ", "Q": " --.- ", "R": " .-. ",
+        "S": " ... ", "T": " - ", "U": " ..- ", "V": " ...- ", "W": " .-- ", "X": " -..- ",
+        "Y": " -.-- ", "Z": " --.. ",
+        "1": " .---- ", "2": " ..--- ", "3": " ...-- ", "4": " ....- ", "5": " ..... ",
+        "6": " -.... ", "7": " --... ", "8": " ---.. ", "9": " ----. ", "0": " ----- ",
+        " ": "/ "
+    ]
+    var morseCode: String = ""
+    
+    for char in text.uppercased() {
+        if let morseChar = morseAlphabet[char] {
+            morseCode += morseChar
+        }
+    }
+    
+    return morseCode
+}
+
+print("SOS in morse code means \(textToMorseCode("SOS"))")
