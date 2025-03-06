@@ -50,3 +50,32 @@ func convertCurrency(_ exchangeRate: Double) -> String {
     let exchangedBalance: Double = account.balance * exchangeRate
     return exchangedBalance.formatted(.number.precision(.fractionLength(2)))
 }
+
+// Aufgabe 4.1 Überweisung
+
+let currency: Character = "€"
+let amountInEuro: Double = 500
+let purposeMessage: String = """
+Für unsere kommende Islandreise - 
+hier ist mein Beitrag zur gemeinsamen Abenteuerkasse,
+damit wir unvergessliche Erlebnisse schaffen können!
+"""
+let header: String = """
+Überweisung
+Unverschlüsselt
+"""
+let body: String = """
+Name: \(account.userName)
+
+Bank: \(account.bankName), \(account.bankTown)
+Kontonummer: \(account.accountNumber)
+IBAN: \(account.iban)
+
+Betrag: \(amountInEuro)\(currency)
+
+Verwendungszweck: \(purposeMessage)
+"""
+let transferMessage: String = """
+\(header)
+\(body)
+"""
