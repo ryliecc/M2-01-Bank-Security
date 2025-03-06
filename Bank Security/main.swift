@@ -174,3 +174,15 @@ func checkIfValid (_ message: String) -> Bool {
 
 
 print("The message is \(checkIfValid(transferMessage) ? "" : "not ")valid.")
+
+// Aufgabe 4.5 Erweiterte String-Verarbeitung
+
+var firstTenChars: String = String(transferMessage.prefix(10))
+var lastTenChars: String = String(transferMessage.suffix(10))
+
+print("""
+The first 10 Characters of the message are:
+\(firstTenChars) 
+The last 10 characters are:
+\(lastTenChars)
+""")
