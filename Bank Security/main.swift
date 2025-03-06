@@ -115,3 +115,25 @@ let mediumTermSpending: Double = account.balance / 100 * 30
 let shortTermSpending: Double = account.balance / 100 * 20
 
 print("After allocating the balance from the main account to three accounts, the user now has a balance of \(longTermSaving.formatted(.number.precision(.fractionLength(2))))€ for long-term saving, \(mediumTermSpending.formatted(.number.precision(.fractionLength(2))))€ for medium-term spending and \(shortTermSpending.formatted(.number.precision(.fractionLength(2))))€ for short-term spending.")
+
+// Aufgabe 4.2 Überweisung verschlüsseln
+
+let encryptAlphabet = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzÄäÖöÜü1234567890")
+let cryptAlphabet = Array("🐉🍕🚀🌙🏝🎸🦓🌊🍟🦅👑🎵🏀🐍🦋🌺❌🍎🦘🤹🏔🌈☂️🌮🔥🎻💎🐢🎭🛸🧩⚡️🍀🦊🏹🐙🦄📚🎨🦇🥑🧁🐠🎩🥋🪐🐰🎷🍩🦜🚦🦕🛶🎯🐧🍫🍉🎤🎮🦁🌍💡💀🌞🍯🦚🛵🌟🍂🌻🦗🚂")
+
+func encryptMessage(_ message: String) -> String {
+    
+    var encryptedMessage: String = ""
+    
+    for char in message {
+        if let index = encryptAlphabet.firstIndex(of: char) {
+            encryptedMessage += String(cryptAlphabet[index])
+        } else {
+            encryptedMessage += String(char)
+        }
+    }
+    
+    return encryptedMessage
+}
+
+print(encryptMessage(transferMessage))
