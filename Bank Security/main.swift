@@ -140,21 +140,7 @@ print(encryptMessage(transferMessage))
 
 // Aufgabe 4.3 Überweisung entschlüsseln
 
-let secretMessage: String = """
-🍉🐢🧩🎩🍩🧩🏹🥋🐰🦇🍀
-🏔🦇🎷🧩🎩🥋🎭🦊📚🎤🥋🥋🧩📚🪐
-🐍💎🎨🧩: 🍕🧩💎🪐🧩 🍕🧩🏹🥋🧁🏹🧩📚
-
-🍕💎🦇🦄: 🍕🧩🏹🥋🧁🏹🧩📚🐢💎🦇🦄 🌙🧩🐰🪐🥋🎭🦊📚💎🦇🛸, 🍕🧩🎩📚🏹🦇
-👑🥑🦇🪐🥑🦇🐰🎨🎨🧩🎩: 🎮🦁🌍💡💀🌞🍯🦚
-🍟🍕🐉🐍: 🌙🏝 🎮🦁🌍💡 💀🌞🍯🦚 🛵🎮🌟🎮 🎮🦁🎮🌍
-
-🍕🧩🪐🎩💎🍀: 💀🌟🌟.🌟€
-
-🌈🧩🎩🍩🧩🦇🛸🐰🦇🍀🥋🦕🍩🧩🎭🦄: 🎸🎤🎩 🐰🦇🥋🧩🎩🧩 🦄🥑🎨🎨🧩🦇🛸🧩 🍟🥋📚💎🦇🛸🎩🧩🏹🥋🧩 - 
-🦊🏹🧩🎩 🏹🥋🪐 🎨🧩🏹🦇 🍕🧩🏹🪐🎩💎🍀 🦕🐰🎩 🍀🧩🎨🧩🏹🦇🥋💎🎨🧩🦇 🐉🐢🧩🦇🪐🧩🐰🧩🎩🦄💎🥋🥋🧩,
-🛸💎🎨🏹🪐 🍩🏹🎩 🐰🦇🎷🧩🎩🍀🧩🥋🥋📚🏹🎭🦊🧩 🏝🎩📚🧩🐢🦇🏹🥋🥋🧩 🥋🎭🦊💎⚡️⚡️🧩🦇 🦄🍫🦇🦇🧩🦇!
-"""
+let secretMessage: String = encryptMessage(transferMessage)
 
 func decryptMessage (_ message: String) -> String {
     var decryptedMessage: String = ""
@@ -171,3 +157,20 @@ func decryptMessage (_ message: String) -> String {
 }
 
 print(decryptMessage(secretMessage))
+
+// Aufgabe 4.4 Gültigkeit der Überweisung
+
+func checkIfValid (_ message: String) -> Bool {
+    if message.isEmpty {
+        return false
+    } else if message.count >= 400 {
+        return false
+    } else if message.contains(account.iban) == false {
+        return false
+    } else {
+        return true
+    }
+}
+
+
+print("The message is \(checkIfValid(transferMessage) ? "" : "not ")valid.")
